@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-workspace name="Integration_Playground" soapui-version="5.2.0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings/>
+  <con:project name="IntegrationService">C:/Projects/integrationService/soapUi/IntegrationService-soapui-project.xml</con:project>
+</con:soapui-workspace>

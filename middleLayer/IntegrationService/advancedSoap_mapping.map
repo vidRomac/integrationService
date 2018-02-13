@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><mappingRoot xmlns="http://www.ibm.com/2008/ccl/Mapping" domainID="com.ibm.msl.mapping.xml" domainIDExtension="mb" mainMap="true" targetNamespace="default" version="8.0.5.0" xmlns:map="default">
+    <input path="/IntegrationService_InlineSchema1.xsd"/>
+    <output path="/IntegrationService_InlineSchema1.xsd"/>
+    <namespaces>
+        <namespace kind="supplement" prefix="io" uri="http://IntegrationService/integration/messages/request"/>
+        <namespace kind="supplement" prefix="io3" uri="http://IntegrationService/integration/messages/shared"/>
+        <namespace kind="supplement" prefix="io2" uri="http://IntegrationService/integration/messages/response"/>
+        <namespace kind="supplement" prefix="io4" uri="http://IntegrationService/integration/service"/>
+    </namespaces>
+    <generation engine="xquery"/>
+    <mappingDeclaration name="advancedSoap_mapping">
+        <input namespace="http://IntegrationService/integration/service" path="mb:msg(advancedSoap,assembly,XMLNSC,Properties)" var="ComIbmMessageAssembly_advancedSoap"/>
+        <output namespace="http://IntegrationService/integration/service" path="mb:msg(advancedSoapResponse,assembly,XMLNSC,Properties)" var="ComIbmMessageAssembly_advancedSoapResponse"/>
+        <move>
+            <input path="$ComIbmMessageAssembly_advancedSoap/Properties"/>
+            <output path="$ComIbmMessageAssembly_advancedSoapResponse/Properties"/>
+        </move>
+        <move>
+            <input path="$ComIbmMessageAssembly_advancedSoap/advancedSoap/advancedRequest/id"/>
+            <output path="$ComIbmMessageAssembly_advancedSoapResponse/advancedSoapResponse/advancedResponse/correlationId"/>
+        </move>
+        <move>
+            <input path="$ComIbmMessageAssembly_advancedSoap/advancedSoap/advancedRequest/timeStamp"/>
+            <output path="$ComIbmMessageAssembly_advancedSoapResponse/advancedSoapResponse/advancedResponse/timeStamp"/>
+        </move>
+        <assign value="TEST VALUE">
+            <output path="$ComIbmMessageAssembly_advancedSoapResponse/advancedSoapResponse/advancedResponse/responsePayload/stringParam"/>
+        </assign>
+        <assign value="123456789">
+            <output path="$ComIbmMessageAssembly_advancedSoapResponse/advancedSoapResponse/advancedResponse/responsePayload/intParam"/>
+        </assign>
+        <assign value="2018-02-05">
+            <output path="$ComIbmMessageAssembly_advancedSoapResponse/advancedSoapResponse/advancedResponse/responsePayload/dateParam"/>
+        </assign>
+        <assign value="14:25:31">
+            <output path="$ComIbmMessageAssembly_advancedSoapResponse/advancedSoapResponse/advancedResponse/responsePayload/timeParam"/>
+        </assign>
+        <assign value="true">
+            <output path="$ComIbmMessageAssembly_advancedSoapResponse/advancedSoapResponse/advancedResponse/responsePayload/booleanParam"/>
+        </assign>
+        <assign value="12312313123">
+            <output path="$ComIbmMessageAssembly_advancedSoapResponse/advancedSoapResponse/advancedResponse/responsePayload/longParam"/>
+        </assign>
+    </mappingDeclaration>
+</mappingRoot>

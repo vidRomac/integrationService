@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://IntegrationService/integration/messages/response" version="1.0.0" xmlns="http://IntegrationService/integration/messages/response" xmlns:sh="http://IntegrationService/integration/messages/shared">
+
+	<xsd:import namespace="http://IntegrationService/integration/messages/shared" schemaLocation="SharedTypes.xsd"/>
+
+	<xsd:complexType name="response">
+		<xsd:annotation>
+			<xsd:documentation>Sample response - Model A.1</xsd:documentation>
+		</xsd:annotation>
+
+		<xsd:sequence>
+			<xsd:element name="correlationId" nillable="false" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="timeStamp" nillable="true" type="xsd:dateTime"/>
+			<xsd:element name="responsePayload" nillable="false" type="sh:payload"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+</xsd:schema>

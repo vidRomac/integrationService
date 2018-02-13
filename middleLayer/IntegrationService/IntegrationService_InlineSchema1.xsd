@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://IntegrationService/integration/service" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" xmlns:ns1="http://IntegrationService/integration/messages/response" xmlns:ns2="http://IntegrationService/integration/messages/request" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://IntegrationService/integration/service" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+	
+    <xsd:import namespace="http://IntegrationService/integration/messages/request" schemaLocation="Request_01.xsd"/>
+    <xsd:import namespace="http://IntegrationService/integration/messages/response" schemaLocation="Response_01.xsd"/>
+    <xsd:element ibmSchExtn:docRoot="true" name="echoSoap">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="echoRequest" nillable="true" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element ibmSchExtn:docRoot="true" name="echoSoapResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="echoResponse" nillable="true" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+    <xsd:element ibmSchExtn:docRoot="true" name="advancedSoap">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="advancedRequest" nillable="true" type="ns2:request"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+    <xsd:element ibmSchExtn:docRoot="true" name="advancedSoapResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="advancedResponse" nillable="true" type="ns1:response"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

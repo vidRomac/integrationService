@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="32091eca-c0be-49ed-8fd4-41368cf5ef2e" activeEnvironment="Default" name="IntegrationService" resourceRoot="" soapui-version="5.2.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="257f8a09-818c-4e0f-a626-48f5651e597f" wsaVersion="NONE" name="IntegrationServiceHttpBinding" type="wsdl" bindingName="{http://IntegrationService/integration/service}IntegrationServiceHttpBinding" soapVersion="1_1" anonymous="optional" definition="http://192.168.0.102:7800/IntegrationService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://192.168.0.102:7800/IntegrationService?wsdl"><con:part><con:url>http://192.168.0.102:7800/IntegrationService?wsdl</con:url><con:content><![CDATA[<!--File IntegrationService.wsdl, application IntegrationService-->
+<wsdl:definitions name="IntegrationService" targetNamespace="http://IntegrationService/integration/service" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:bons1="http://IntegrationService/integration/messages/request" xmlns:bons2="http://IntegrationService/integration/messages/response" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://IntegrationService/integration/service" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:documentation>
+    <wsdl:appinfo source="WMQI_APPINFO">
+      <MRWSDLAppInfo imported="true">
+        <binding hasEncoding="false" imported="true" name="IntegrationServiceHttpBinding" originalBindingStyle="document"/>
+        <generatedXSD location="IntegrationService_InlineSchema1.xsd"/>
+      </MRWSDLAppInfo>
+    </wsdl:appinfo>
+  </wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://IntegrationService/integration/service">
+      <xsd:include schemaLocation="http://192.168.0.102:7800/IntegrationService?xsd=xsd0"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="echoSoapRequestMsg">
+    <wsdl:part element="tns:echoSoap" name="echoSoapParameters"/>
+  </wsdl:message>
+  <wsdl:message name="echoSoapResponseMsg">
+    <wsdl:part element="tns:echoSoapResponse" name="echoSoapResult"/>
+  </wsdl:message>
+  <wsdl:message name="advancedSoapRequestMsg">
+    <wsdl:part element="tns:advancedSoap" name="advancedSoapParameters"/>
+  </wsdl:message>
+  <wsdl:message name="advancedSoapResponseMsg">
+    <wsdl:part element="tns:advancedSoapResponse" name="advancedSoapResult"/>
+  </wsdl:message>
+  <wsdl:portType name="IntegrationService">
+    <wsdl:operation name="echoSoap">
+      <wsdl:input message="tns:echoSoapRequestMsg" name="echoSoapRequest"/>
+      <wsdl:output message="tns:echoSoapResponseMsg" name="echoSoapResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="advancedSoap">
+      <wsdl:input message="tns:advancedSoapRequestMsg" name="advancedSoapRequest"/>
+      <wsdl:output message="tns:advancedSoapResponseMsg" name="advancedSoapResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="IntegrationServiceHttpBinding" type="tns:IntegrationService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="echoSoap">
+      <soap:operation soapAction="http://IntegrationService/integration/service/echoSoap"/>
+      <wsdl:input name="echoSoapRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="echoSoapResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="advancedSoap">
+      <soap:operation soapAction="http://IntegrationService/integration/service/advancedSoap"/>
+      <wsdl:input name="advancedSoapRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="advancedSoapResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="IntegrationServiceHttpService">
+    <wsdl:port binding="tns:IntegrationServiceHttpBinding" name="IntegrationServiceHttpPort">
+      <soap:address location="http://192.168.0.102:7800/IntegrationService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://192.168.0.102:7800/IntegrationService?xsd=xsd0</con:url><con:content><![CDATA[<!--File IntegrationService_InlineSchema1.xsd, application IntegrationService-->
+<xsd:schema targetNamespace="http://IntegrationService/integration/service" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" xmlns:ns1="http://IntegrationService/integration/messages/response" xmlns:ns2="http://IntegrationService/integration/messages/request" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://IntegrationService/integration/service" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <xsd:import namespace="http://IntegrationService/integration/messages/request" schemaLocation="http://192.168.0.102:7800/IntegrationService?xsd=xsd1"/>
+  <xsd:import namespace="http://IntegrationService/integration/messages/response" schemaLocation="http://192.168.0.102:7800/IntegrationService?xsd=xsd2"/>
+  <xsd:element ibmSchExtn:docRoot="true" name="echoSoap">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="echoRequest" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="echoSoapResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="echoResponse" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="advancedSoap">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="advancedRequest" nillable="true" type="ns2:request"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="advancedSoapResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="advancedResponse" nillable="true" type="ns1:response"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://192.168.0.102:7800/IntegrationService?xsd=xsd1</con:url><con:content><![CDATA[<!--File Request_01.xsd, application IntegrationService-->
+<xsd:schema targetNamespace="http://IntegrationService/integration/messages/request" version="1.0.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://IntegrationService/integration/messages/request" xmlns:sh="http://IntegrationService/integration/messages/shared">
+  <xsd:import namespace="http://IntegrationService/integration/messages/shared" schemaLocation="http://192.168.0.102:7800/IntegrationService?xsd=xsd3"/>
+  <xsd:complexType name="request">
+    <xsd:annotation>
+      <xsd:documentation>Sample request - Model A.1</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="id" nillable="false" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="timeStamp" nillable="true" type="xsd:dateTime"/>
+      <xsd:element name="requestPayload" nillable="false" type="sh:payload"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://192.168.0.102:7800/IntegrationService?xsd=xsd3</con:url><con:content><![CDATA[<!--File SharedTypes.xsd, application IntegrationService-->
+<xsd:schema targetNamespace="http://IntegrationService/integration/messages/shared" version="1.0.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://IntegrationService/integration/messages/shared">
+  <xsd:complexType name="payload">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="stringParam" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="intParam" type="xsd:integer"/>
+      <xsd:element minOccurs="0" name="dateParam" type="xsd:date"/>
+      <xsd:element minOccurs="0" name="timeParam" type="xsd:time"/>
+      <xsd:element minOccurs="0" name="booleanParam" type="xsd:boolean"/>
+      <xsd:element minOccurs="0" name="longParam" type="xsd:long"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://192.168.0.102:7800/IntegrationService?xsd=xsd2</con:url><con:content><![CDATA[<!--File Response_01.xsd, application IntegrationService-->
+<xsd:schema targetNamespace="http://IntegrationService/integration/messages/response" version="1.0.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://IntegrationService/integration/messages/response" xmlns:sh="http://IntegrationService/integration/messages/shared">
+  <xsd:import namespace="http://IntegrationService/integration/messages/shared" schemaLocation="http://192.168.0.102:7800/IntegrationService?xsd=xsd3"/>
+  <xsd:complexType name="response">
+    <xsd:annotation>
+      <xsd:documentation>Sample response - Model A.1</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="correlationId" nillable="false" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="timeStamp" nillable="true" type="xsd:dateTime"/>
+      <xsd:element name="responsePayload" nillable="false" type="sh:payload"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://192.168.0.102:7800/IntegrationService</con:endpoint></con:endpoints><con:operation id="ad26b087-ebdc-4314-8c45-1f9b27644f95" isOneWay="false" action="http://IntegrationService/integration/service/advancedSoap" name="advancedSoap" bindingOperationName="advancedSoap" type="Request-Response" outputName="advancedSoapResponse" inputName="advancedSoapRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="07fb5470-3dfe-4f32-92e8-6b636298f9ae" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.0.102:7800/IntegrationService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://IntegrationService/integration/service">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:advancedSoap>\r
+         <advancedRequest>\r
+            <id>12312</id>\r
+            <!--Optional:-->\r
+            <timeStamp>2017-12-13T13:56:12</timeStamp>\r
+            <requestPayload>\r
+               <!--Optional:-->\r
+               <stringParam>abbbbd</stringParam>\r
+               <!--Optional:-->\r
+               <intParam>234423</intParam>\r
+               <!--Optional:-->\r
+               <dateParam>2018-02-05</dateParam>\r
+               <!--Optional:-->\r
+               <timeParam>13:54:23</timeParam>\r
+               <!--Optional:-->\r
+               <booleanParam>false</booleanParam>\r
+               <!--Optional:-->\r
+               <longParam>2342332423242400000</longParam>\r
+            </requestPayload>\r
+         </advancedRequest>\r
+      </ser:advancedSoap>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://IntegrationService/integration/service/advancedSoap"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="d445dc88-cdf3-4f6e-a245-47d00e33fa91" isOneWay="false" action="http://IntegrationService/integration/service/echoSoap" name="echoSoap" bindingOperationName="echoSoap" type="Request-Response" outputName="echoSoapResponse" inputName="echoSoapRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="091bd3b7-7766-4feb-8a18-8dabb97c7a45" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.0.102:7800/IntegrationService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://IntegrationService/integration/service">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:echoSoap>\r
+         <echoRequest>23423424</echoRequest>\r
+      </ser:echoSoap>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://IntegrationService/integration/service/echoSoap"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

@@ -1,0 +1,23 @@
+
+
+Importing file: C:\Projects\integrationService\middleLayer\IntegrationService\IntegrationService.wsdl
+
+The WSDL import will proceed with bindings IntegrationServiceHttpBinding.
+Creating wsdl schema document for platform:/resource/IntegrationService/IntegrationService.wsdl.
+Parsing wsdl binding {http://IntegrationService/integration/service}IntegrationServiceHttpBinding.
+Parsing wsdl binding input echoSoap.
+Parsing wsdl binding output echoSoap.
+Parsing wsdl binding input advancedSoap.
+Parsing wsdl binding output advancedSoap.
+Processing doc style for operation echoSoap.
+Processing doc style for operation advancedSoap.
+Populating WSDL schema IntegrationService.xsd.
+Removing unnecessary import statement with namespace http://IntegrationService/integration/messages/request from schema IntegrationService_InlineSchema1.xsd.  This statement was not resolved and is never used.
+Removing unnecessary import statement with namespace http://IntegrationService/integration/messages/request from schema IntegrationService_InlineSchema1.xsd.  This statement was not resolved and is never used.
+Removing unnecessary import statement with namespace http://IntegrationService/integration/messages/response from schema IntegrationService_InlineSchema1.xsd.  This statement was not resolved and is never used.
+Creating file IntegrationService.xsd in the workspace.
+Creating file IntegrationService_InlineSchema1.xsd in the workspace.
+Creating file /IntegrationService/Request_01.xsd in the workspace.
+Creating file /IntegrationService/IntegrationService/SharedTypes.xsd in the workspace.
+Creating file /IntegrationService/Response_01.xsd in the workspace.
+Copying source WSDL IntegrationService.wsdl to IntegrationService.wsdl.

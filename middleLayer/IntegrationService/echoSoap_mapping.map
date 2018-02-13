@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><mappingRoot xmlns="http://www.ibm.com/2008/ccl/Mapping" domainID="com.ibm.msl.mapping.xml" domainIDExtension="mb" mainMap="true" targetNamespace="default" version="8.0.5.0" xmlns:map="default">
+    <input path="/IntegrationService_InlineSchema1.xsd"/>
+    <output path="/IntegrationService_InlineSchema1.xsd"/>
+    <namespaces>
+        <namespace kind="supplement" prefix="io" uri="http://IntegrationService/integration/service"/>
+    </namespaces>
+    <generation engine="xquery"/>
+    <mappingDeclaration name="echoSoap_mapping">
+        <input namespace="http://IntegrationService/integration/service" path="mb:msg(echoSoap,assembly,XMLNSC,Properties)" var="ComIbmMessageAssembly_echoSoap"/>
+        <output namespace="http://IntegrationService/integration/service" path="mb:msg(echoSoapResponse,assembly,XMLNSC,Properties)" var="ComIbmMessageAssembly_echoSoapResponse"/>
+        <move>
+            <input path="$ComIbmMessageAssembly_echoSoap/Properties"/>
+            <output path="$ComIbmMessageAssembly_echoSoapResponse/Properties"/>
+        </move>
+        <move>
+            <input path="$ComIbmMessageAssembly_echoSoap/echoSoap/echoRequest"/>
+            <output path="$ComIbmMessageAssembly_echoSoapResponse/echoSoapResponse/echoResponse"/>
+        </move>
+    </mappingDeclaration>
+</mappingRoot>

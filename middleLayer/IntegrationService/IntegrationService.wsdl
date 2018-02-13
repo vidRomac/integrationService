@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="IntegrationService" targetNamespace="http://IntegrationService/integration/service" xmlns:bons1="http://IntegrationService/integration/messages/request" xmlns:bons2="http://IntegrationService/integration/messages/response" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://IntegrationService/integration/service" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:documentation>
+    <wsdl:appinfo source="WMQI_APPINFO">
+      <MRWSDLAppInfo imported="true">
+        <binding hasEncoding="false" imported="true" name="IntegrationServiceHttpBinding" originalBindingStyle="document"/>
+        <generatedXSD location="IntegrationService_InlineSchema1.xsd"/>
+      </MRWSDLAppInfo>
+    </wsdl:appinfo>
+  </wsdl:documentation>
+  
+	
+
+
+
+
+
+	<wsdl:types>
+
+
+        <xsd:schema targetNamespace="http://IntegrationService/integration/service">
+            <xsd:include schemaLocation="IntegrationService_InlineSchema1.xsd"/>
+    </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="echoSoapRequestMsg">
+    <wsdl:part element="tns:echoSoap" name="echoSoapParameters"/>
+  </wsdl:message>
+    <wsdl:message name="echoSoapResponseMsg">
+    <wsdl:part element="tns:echoSoapResponse" name="echoSoapResult"/>
+  </wsdl:message>
+    <wsdl:message name="advancedSoapRequestMsg">
+    <wsdl:part element="tns:advancedSoap" name="advancedSoapParameters"/>
+  </wsdl:message>
+    <wsdl:message name="advancedSoapResponseMsg">
+    <wsdl:part element="tns:advancedSoapResponse" name="advancedSoapResult"/>
+  </wsdl:message>
+    <wsdl:portType name="IntegrationService">
+        <wsdl:operation name="echoSoap">
+      <wsdl:input message="tns:echoSoapRequestMsg" name="echoSoapRequest"/>
+      <wsdl:output message="tns:echoSoapResponseMsg" name="echoSoapResponse"/>
+    </wsdl:operation>
+        <wsdl:operation name="advancedSoap">
+      <wsdl:input message="tns:advancedSoapRequestMsg" name="advancedSoapRequest"/>
+      <wsdl:output message="tns:advancedSoapResponseMsg" name="advancedSoapResponse"/>
+    </wsdl:operation>
+    </wsdl:portType>
+	<wsdl:binding name="IntegrationServiceHttpBinding" type="tns:IntegrationService">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="echoSoap">
+            <soap:operation soapAction="http://IntegrationService/integration/service/echoSoap"/>
+            <wsdl:input name="echoSoapRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+      <wsdl:output name="echoSoapResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+    </wsdl:operation>
+        <wsdl:operation name="advancedSoap">
+      <soap:operation soapAction="http://IntegrationService/integration/service/advancedSoap"/>
+      <wsdl:input name="advancedSoapRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="advancedSoapResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    </wsdl:binding>
+	<wsdl:service name="IntegrationServiceHttpService">
+		<wsdl:port binding="tns:IntegrationServiceHttpBinding" name="IntegrationServiceHttpPort">
+			<soap:address location="http://localhost:7800/IntegrationService"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

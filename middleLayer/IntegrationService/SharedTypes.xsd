@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://IntegrationService/integration/messages/shared" version="1.0.0" xmlns="http://IntegrationService/integration/messages/shared">
+
+	<xsd:complexType name="payload">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="stringParam" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="intParam" type="xsd:integer"/>
+			<xsd:element minOccurs="0" name="dateParam" type="xsd:date"/>
+			<xsd:element minOccurs="0" name="timeParam" type="xsd:time"/>
+			<xsd:element minOccurs="0" name="booleanParam" type="xsd:boolean"/>
+			<xsd:element minOccurs="0" name="longParam" type="xsd:long"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+</xsd:schema>
